@@ -45,6 +45,7 @@ public class Tree<T> {
         Node<T> parent = findNode(parentnodeValue);
         Node<T> child = new Node<T>();
         child.data = newNodeValue;
+        tree.add(child);
         parent.children.add(child);
         return child;
     }
@@ -54,13 +55,13 @@ public class Tree<T> {
      * @return
      */
     public int getSize(){
-        return 0;
+        return tree.size();
     }
 
     public class Node<T> {
         private T data;
         private Node<T> parent;
-        private List<Node<T>> children;
+        private List<Node<T>> children = new ArrayList<>();
 
         @Override
         public String toString() {
